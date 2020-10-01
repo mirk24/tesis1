@@ -1,0 +1,80 @@
+<form [formGroup]="form" class="example-form">
+    <table class="example-full-width" cellspacing="0"><tr>
+    <td><mat-form-field class="example-full-width">
+      <input matInput formControlName="nombre" name="nombre" [(ngModel)]="per.nombre" placeholder="Nombre">
+    </mat-form-field></td>
+    <div *ngIf="form.controls.nombre.errors"  style="color:red">
+        <div *ngIf="form.controls.nombre.errors.required">Este campo es obligatorio</div>
+        <div *ngIf="form.controls.nombre.errors.maxlength">El tamano es muy grande</div>
+    </div>
+
+   <td><mat-form-field class="example-full-width">
+            <input matInput formControlName="ape_pat" name="ape_pat" [(ngModel)]="per.ape_pat" placeholder="Apellido Paterno">
+          </mat-form-field></td>
+          <div *ngIf="form.controls.ape_pat.errors"  style="color:red">
+              <div *ngIf="form.controls.ape_pat.errors.required">Este campo es obligatorio</div>
+              <div *ngIf="form.controls.ape_pat.errors.maxlength">El tamano es muy grande</div>
+          </div>
+        
+    <td><mat-form-field >
+          <input matInput formControlName="ape_mat" name="ape_mat" [(ngModel)]="per.ape_mat" placeholder="Apellido Materno">
+          </mat-form-field></td></tr></table> 
+    <mat-form-field class="example-full-width">
+        <div *ngIf="form.controls.ape_mat.errors"  style="color:red">
+            <div *ngIf="form.controls.ape_mat.errors.required">Este campo es obligatorio</div>
+            <div *ngIf="form.controls.ape_mat.errors.maxlength">El tamano es muy grande</div>
+        </div>
+
+            <input matInput formControlName="ci" name="ci" [(ngModel)]="per.ci" placeholder="CI">
+          </mat-form-field>
+          <div *ngIf="form.controls.ci.errors"  style="color:red">
+            <div *ngIf="form.controls.ci.errors.required">Este campo es obligatorio</div>
+            <div *ngIf="form.controls.ci.errors.maxlength">El tamano es muy grande</div>
+        </div>
+        
+    <mat-form-field class="example-full-width">
+            <input matInput formControlName="fecha_nac" name="fecha_nac" [(ngModel)]="per.fecha_nac" placeholder="Fecha de Nacimiento">
+          </mat-form-field>
+          <div *ngIf="form.controls.fecha_nac.errors"  style="color:red">
+              <div *ngIf="form.controls.fecha_nac.errors.required">Este campo es obligatorio</div>
+              <div *ngIf="form.controls.fecha_nac.errors.maxlength">El tamano es muy grande</div>
+          </div>
+
+    <mat-form-field class="example-full-width">
+            <input matInput formControlName="direccion" name="direccion" [(ngModel)]="per.direccion" placeholder="Direccion">
+          </mat-form-field>
+          <div *ngIf="form.controls.direccion.errors"  style="color:red">
+              <div *ngIf="form.controls.direccion.errors.required">Este campo es obligatorio</div>
+              <div *ngIf="form.controls.direccion.errors.maxlength">El tamano es muy grande</div>
+          </div>
+
+    <mat-form-field class="example-full-width">
+            <input matInput formControlName="correo" name="correo" [(ngModel)]="per.usuario.correo" placeholder="Correo">
+          </mat-form-field>
+          <div *ngIf="form.controls.correo.errors"  style="color:red">
+              <div *ngIf="form.controls.correo.errors.required">Este campo es obligatorio</div>
+              <div *ngIf="form.controls.correo.errors.maxlength">El tamano es muy grande</div>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="contrasenia" name="contrasenia" [(ngModel)]="per.usuario.contrasenia" placeholder="Contraseña">
+          </mat-form-field>
+          <div *ngIf="form.controls.contrasenia.errors"  style="color:red">
+              <div *ngIf="form.controls.contrasenia.errors.required">Este campo es obligatorio</div>
+              <div *ngIf="form.controls.contrasenia.errors.maxlength">El tamano es muy grande</div>
+          </div>
+
+          <mat-form-field class="example-full-width">
+            <input matInput type="text" formControlName="tipo_usuario" name="tipo_usuario" [(ngModel)]="per.usuario.tipo_usuario" placeholder="Tipo de Usuario">
+          </mat-form-field>    
+          <div *ngIf="form.controls.tipo_usuario.errors"  style="color:red">
+              <div *ngIf="form.controls.tipo_usuario.errors.required">Este campo es obligatorio</div>
+              <div *ngIf="form.controls.tipo_usuario.errors.maxlength">El tamano es muy grande</div>
+          </div>       
+  
+  
+    <mat-form-field class="example-full-width">
+      <button mat-raised-button   (click)="onNoClick()" > Cancelar</button>
+      <button mat-raised-button  (click)="enviar()"  > enviar</button>
+    </mat-form-field>
+  </form>
